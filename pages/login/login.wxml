@@ -16,7 +16,7 @@
 
       <image class="nameImage" src="../../image/name.png"></image>
 
-      <label class="loginLab">号码1</label>
+      <label class="loginLab">号码2</label>
 
       <input class="inputText" placeholder="请输入号码" bindinput="phoneInput" />
 
