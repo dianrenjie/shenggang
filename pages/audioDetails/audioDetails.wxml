@@ -1,0 +1,31 @@
+<view class="container">
+  <!-- 模块一 标题 -->
+  <view class="title">
+    {{title}}
+  </view>
+  <!-- 模块二 时间栏 -->
+  <view class="time">
+    <view>{{time}}</view>
+    <view class="imageArea">
+      <image class="imageImg" src="../../image/{{url}}.png" style="margin-right:40rpx;" bindtap="collect" />
+      <button open-type='share'>
+        <image class="imageImg" src="../../image/share.png" bindtap="share" />
+      </button>
+    </view>
+  </view>
+  <!-- 模块三 音频区域 -->
+  <view class="audioArea">
+    <audio src="{{audio}}" id="myAudio" poster="http://img3.doubanio.com/pview/event_poster/raw/public/0db8f7ec0d60bb2.jpg" name="学习音频" author="{{id}}" action="{{audioAction}}" controls loop bindplay="audioPlay" bindpause="audioPause"></audio>
+
+  </view>
+
+
+
+  <!-- 模块四 文字 -->
+  <view class="textItem">
+    {{intro}}
+  </view>
+
+
+  <view class="line"></view>
+</view>

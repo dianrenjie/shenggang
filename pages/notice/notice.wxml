@@ -1,0 +1,23 @@
+<!--pages/xiaoxi/xiaoxi.wxml-->
+<view class='container'>
+  <view class='itemList' bindtap="toNoticeDetails">
+    <image class="itemImg" src='../../image/news1.png'></image>
+    <view class='itemTitle'>
+      <view>党建官方公告</view>
+      <view style="color: #999999;font-size: 24rpx;">{{title}}</view>
+    </view>
+    <view class='time'>
+      {{time}}
+    </view>
+  </view>
+  <view class='itemList' bindtap="toNoticeDetails">
+    <image class="itemImg" src='../../image/new2.png'></image>
+    <view class='itemTitle'>
+      <view>活动公告</view>
+      <view style="color: #999999;font-size: 24rpx;">公告内容详情</view>
+    </view>
+    <view class='time'>
+      09-18 08:59
+    </view>
+  </view>
+</view>

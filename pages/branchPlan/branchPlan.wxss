@@ -1,0 +1,46 @@
+/* pages/branchPlan/branchPlan.wxss */
+
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.themeImage {
+  width: 750rpx;
+  height: 122rpx;
+}
+
+.villageList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 750rpx;
+}
+
+.villageItem {
+  width: 100%;
+  height: 90rpx;
+}
+.villageTitle{
+  padding-left: 2%;
+  font-weight:bold;
+  font-size: 35rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+.villageIntro{
+  padding-left: 2%;
+  font-size: 28rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.lines {
+  width: 750rpx;
+  height: 2rpx;
+  background-color: #eee;
+  /* margin-left: -30rpx; */
+}

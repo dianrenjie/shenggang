@@ -1,0 +1,50 @@
+<!--pages/mine/mine.wxml-->
+<!-- 模块一 主题 -->
+<view class='theme'>
+  <view class='personImage'>
+    <image class='imageItem' src='{{img}}'></image>
+  </view>
+  <view class='personInfo'>
+     <view>{{realname}}</view> 
+    <view style="font-size:24rpx;">政治面貌：{{status=='1'?'党员':'群众'}}</view>
+  </view>
+  <image class="themeImage" src="../../image/background.png" />
+</view>
+<!-- 模块二 学习信息 -->
+<view class='studyInfo'>
+  <view class='studyItem'>
+    <view style="font-size:48rpx;color:#333;margin-bottom:20rpx;">3</view>
+    <view style="font-size:24rpx;color:#666;">本月学习</view>
+    <view class="lines"></view>
+  </view>
+  <view class='studyItem'>
+    <view style="font-size:48rpx;color:#333;margin-bottom:20rpx;">14</view>
+    <view style="font-size:24rpx;color:#666;">总计学习</view>
+    <view class="lines"></view>
+  </view>
+  <view class='studyItem'>
+    <view style="{{sum=='0'?'font-size:48rpx;color:#333;margin-bottom:20rpx;':'font-size:24rpx;color:#333;margin-bottom:20rpx;'}}">{{sum}}</view>
+    <view style="font-size:24rpx;color:#666;">学习时长</view>
+  </view>
+</view>
+
+<!-- 模块三 个人信息、学习记录、我的收藏 -->
+<view class='buttonArea'>
+  <view class='buttonItem' bindtap="toPersonMessage">
+    <image class='itemImg' src='../../image/per1.png'></image>
+    <view style="font-size:32rpx;font-weight:bold;color:#333;">个人信息</view>
+    <image class='itemImg2' src='../../image/right.png'></image>
+  </view>
+  <view class="line"></view>
+  <view class='buttonItem' bindtap="toStudyRecord">
+    <image class='itemImg' src='../../image/per2.png'></image>
+    <view style="font-size:32rpx;font-weight:bold;color:#333;">学习记录</view>
+    <image class='itemImg2' src='../../image/right.png'></image>
+  </view>
+  <view class="line"></view>
+  <view class='buttonItem' bindtap="toMyCollection">
+    <image class='itemImg' src='../../image/per3.png'></image>
+    <view style="font-size:32rpx;font-weight:bold;color:#333;">我的收藏</view>
+    <image class='itemImg2' src='../../image/right.png'></image>
+  </view>
+</view>

@@ -1,0 +1,59 @@
+<view class="container" wx:if="{{status==1}}">
+  <view class='statusSelect'>
+    <view class='tab  {{currentData == 0 ? "tabBorer" : ""}}' data-current="0" bindtap='checkCurrent'>文章站</view>
+    <view class='tab  {{currentData == 1 ? "tabBorer" : ""}}' data-current="1" bindtap='checkCurrent'>音频站</view>
+    <view class='tab  {{currentData == 2 ? "tabBorer" : ""}}' data-current="2" bindtap='checkCurrent'>党课</view>
+  </view>
+
+  <swiper current="{{currentData}}" class='swiper' style="height:{{clientHeight?clientHeight+'px':'auto'}}" duration="300" bindanimationfinish="bindchange">
+    <!-- 分页 文章 -->
+    <swiper-item class='scrollers'>
+      <scroll-view scroll-y style="height: {{clientHeight?clientHeight+'px':'auto'}}">
+        <view wx:for="{{article}}" wx:key="{{index}}" data-id="{{item.id}}" bindtap="toStudyDetails">
+          <view class="itemTitle">{{item.a_title}}</view>
+          <view class="itemVideo">
+            <image class="videoImage" src="{{baseurl}}{{item.a_image}}" />
+          </view>
+          <view class="itemintro">{{item.a_intro}}</view>
+          <view class="itemTime">{{item.createtime}}</view>
+          <view class="lines"></view>
+        </view>
+      </scroll-view>
+      
+    </swiper-item>
+    <!-- 分页 音频 -->
+    <swiper-item>
+      <scroll-view scroll-y style="height: {{clientHeight?clientHeight+'px':'auto'}}">
+        <view wx:for="{{audio}}" wx:key="{{index}}" data-id="{{item.id}}" bindtap="toAudioDetails">
+          <view class="itemTitle">{{item.m_title}}</view>
+          <!-- 模块五 音频区域 -->
+          <view class="audioArea">
+            <audio class='ado' src="" name="学习音频" author="{{item.publisher_id}}" poster="http://img3.doubanio.com/pview/event_poster/raw/public/0db8f7ec0d60bb2.jpg" controls></audio>
+          </view>
+          <view class="itemintro">{{item.m_intro}}</view>
+          <view class="itemTime">{{item.createtime}}</view>
+          <view class="lines"></view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <!-- 分页 党课 -->
+    <swiper-item>
+      <scroll-view scroll-y style="height: {{clientHeight?clientHeight+'px':'auto'}}">
+        <view wx:for="{{class}}" wx:key="{{index}}" data-id="{{item.id}}" bindtap="toClassDetails">
+          <view class="itemTitle">{{item.v_title}}</view>
+          <view class="itemVideo">
+            <image class="playButton" src="../../image/playButton.png" wx:if="{{!showVideo}}" />
+            <image class="videoImg" src="{{item.v_image}}" wx:if="{{!showVideo}}" />
+            <video class="videoImage" src="" wx:if="{{showVideo}}"></video>
+          </view>
+          <view class="itemTime">{{item.createtime}}</view>
+          <view class="lines"></view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>
+<view class='container' wx:else>
+  <view class='elseImg'><image  src='../../image/fail.png' /></view>
+  <view class='elseText'>你还不是党员</view>
+</view>

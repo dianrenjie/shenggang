@@ -1,0 +1,35 @@
+.listItem {
+  display: flex;
+  flex-direction: row;
+  padding: 30rpx;
+  border-top: 2rpx solid #eee;
+}
+
+.itemLeft {
+  width: 120rpx;
+  height: 120rpx;
+  margin-right: 20rpx;
+}
+
+.matrixImg {
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.itemRight {
+  display: flex;
+  flex-direction: column;
+}
+
+.itemTitle{
+  font-size: 36rpx;
+  font-weight: bold;
+  line-height: 100%;
+  margin-bottom: 20rpx;
+}
+
+.itemText{
+  font-size: 24rpx;
+  line-height: 30rpx;
+  color: #999;
+}

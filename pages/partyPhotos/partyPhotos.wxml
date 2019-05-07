@@ -1,0 +1,3 @@
+<view>
+    <image src='{{image}}' class='image'></image>
+</view>

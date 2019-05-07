@@ -1,0 +1,10 @@
+<!--地图容器-->·
+<map id="myMap" markers="{{markers}}" style="width:100%;height:{{heights}}rpx;" longitude="{{longitude}}" latitude="{{latitude}}" scale='16' bindmarkertap="getId" include-points="{{markers}}">
+</map>
+
+<view class="mapInfo">
+  <view class="mapTitle">名称：{{title}}</view>
+  <view class="mapAddress">地址：{{address}}</view>
+  <view class="mapText">简介:{{text}}</view>
+  <view class="mapPhone">电话:{{phone}}</view>
+</view>

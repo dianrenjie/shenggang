@@ -1,0 +1,21 @@
+<!--pages/rudang/rudang.wxml-->
+<view class='row'>
+  <view class='info'>
+     <picker bindchange="bindPickerChange" value="{{index}}" range="{{arr}}" range-key="name">
+    <view class="picker">
+      当前选择：{{arr[index].name}}
+      
+    </view>
+  </picker>
+  </view>
+
+</view>
+<view class='row'>
+  <view class='info'>
+    <input type='text' class='info-input' bindinput="handleNewRealname" placeholder="请输入你的入党原因" />
+  </view>
+
+</view>
+
+
+<button class='submit' bindtap='submit'>提交</button>

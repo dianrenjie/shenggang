@@ -1,0 +1,13 @@
+<view class="container">
+  <image class="themeImage" src="../../image/theme.png" />
+  
+  <view class="villageList">
+    
+    <view class="villageItem" wx:for="{{branch}}" wx:key="{{index}}" data-item="{{item}}" bindtap="toPlan">
+    <view class="villageTitle">{{item.title}}</view>
+    <view class="villageIntro">{{item.intro}}</view>
+    <view class='lines'></view>
+    </view>
+    
+  </view>
+</view>

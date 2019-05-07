@@ -1,0 +1,59 @@
+<view class="container">
+
+  <!-- 模块一 顶部菜单 -->
+
+
+  <!-- 模块二  信息列表 -->
+  <view class='statusSelect'>
+    <view class='tab  {{currentData == 0 ? "tabBorer" : ""}}' data-current="0" bindtap='checkCurrent'>文章站</view>
+    <view class='tab  {{currentData == 1 ? "tabBorer" : ""}}' data-current="1" bindtap='checkCurrent'>音频站</view>
+    <view class='tab  {{currentData == 2 ? "tabBorer" : ""}}' data-current="2" bindtap='checkCurrent'>党课</view>
+  </view>
+    <view class="lines"></view>
+  <view class="learnCount">本月学习共{{4}}次
+    <view class="line"></view>
+  </view>
+  <view class="lines"></view>
+  <swiper current="{{currentData}}" class='swiper'  style='height:{{height}}px' duration="300" bindanimationfinish="bindchange">
+    <!-- 分页 文章 -->
+    <swiper-item class='scrollers'>
+      <view wx:for="{{article}}" wx:key="{{index}}" data-id="{{item.data.id}}" bindtap="toStudyDetails">
+        <view class="itemTitle">{{item.data.a_title}}</view>
+        <view class="itemVideo">
+          <image class="videoImage" src="{{baseurl}}{{item.data.a_image}}" />
+        </view>
+        <view class="itemintro">{{item.data.a_intro}}</view>
+        <view class="itemTime">{{item.data.createtime}}</view>
+        <view class="lines"></view>
+      </view>
+    </swiper-item>
+    <!-- 分页 音频 -->
+    <swiper-item>
+      <view wx:for="{{audio}}" wx:key="{{index}}" data-id="{{item.data.id}}" bindtap="toAudioDetails">
+        <view class="itemTitle">{{item.data.m_title}}</view>
+        <!-- 模块五 音频区域 -->
+        <view class="audioArea">
+          <audio  src="{{item.data.m_url}}"     name="学习音频" author="" 
+          poster="http://img3.doubanio.com/pview/event_poster/raw/public/0db8f7ec0d60bb2.jpg"
+          controls ></audio>      
+        </view>
+        <view class="itemintro">{{item.data.m_intro}}</view>
+        <view class="itemTime">{{item.data.createtime}}</view>
+      </view>
+      <view class="lines"></view>
+    </swiper-item>
+    <!-- 分页 党课 -->
+    <swiper-item>
+      <view wx:for="{{video}}" wx:key="{{index}}" data-id="{{item.data.id}}" bindtap="toClassDetails">
+        <view class="itemTitle">{{item.data.v_title}}</view>
+        <view class="itemVideo" >
+          <image class="playButton" src="../../image/playButton.png" wx:if="{{!showVideo}}"/> 
+          <image class="videoImg" src="../../image/lizi1.png" wx:if="{{!showVideo}}" />
+          <video class="videoImage" src="{{item.data.v_url}}" wx:if="{{showVideo}}" ></video>           
+        </view>
+        <view class="itemTime">{{item.data.createtime}}</view>
+      </view>
+      <view class="lines"></view>
+    </swiper-item>
+  </swiper>
+</view>

@@ -1,0 +1,52 @@
+<view class="container">
+  <view class='statusSelect'>
+    <view class='tab  {{currentData == 0 ? "tabBorer" : ""}}' data-current="0" bindtap='checkCurrent'>时政要闻</view>
+    <view class='tab  {{currentData == 1 ? "tabBorer" : ""}}' data-current="1" bindtap='checkCurrent'>新闻聚焦</view>
+    <view class='tab  {{currentData == 2 ? "tabBorer" : ""}}' data-current="2" bindtap='checkCurrent'>党员活动</view>
+  </view>
+
+  <swiper current="{{currentData}}" class='swiper' style="height:{{clientHeight?clientHeight+'px':'auto'}}" duration="300" bindanimationfinish="bindchange">
+    <!-- 分页 时政要闻 -->
+    <swiper-item>
+      <scroll-view scroll-y style="height: {{clientHeight?clientHeight+'px':'auto'}}">
+        <view wx:for="{{current}}" wx:key="{{index}}" data-id="{{item.id}}" bindtap="toArticleDetails">
+          <view class="itemTitle">{{item.title}}</view>
+          <view class="itemVideo">
+            <image class="videoImage" src="{{baseurl}}{{item.image}}" />
+          </view>
+          <view class="itemTime">{{item.createtime}}</view>
+          <view class="lines"></view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <!-- 分页 新闻聚焦 -->
+    <swiper-item>
+      <scroll-view scroll-y style="height: {{clientHeight?clientHeight+'px':'auto'}}">
+        <view wx:for="{{news}}" wx:key="{{index}}" data-id="{{item.id}}" bindtap="toArticleDetails">
+
+          <view class="itemTitle">{{item.title}}</view>
+          <view class="itemVideo">
+            <image class="videoImage" src="{{baseurl}}{{item.image}}" />
+          </view>
+          <view class="itemTime">{{item.createtime}}</view>
+
+
+          <view class="lines"></view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <!-- 分页 党员活动 -->
+    <swiper-item>
+      <scroll-view scroll-y style="height: {{clientHeight?clientHeight+'px':'auto'}}">
+        <view wx:for="{{activity}}" wx:key="{{index}}" data-id="{{item.id}}" bindtap="toArticleDetails">
+          <view class="itemTitle">{{item.title}}</view>
+          <view class="itemVideo">
+            <image class="videoImage" src="{{baseurl}}{{item.image}}" />
+          </view>
+          <view class="itemTime">{{item.createtime}}</view>
+          <view class="lines"></view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>

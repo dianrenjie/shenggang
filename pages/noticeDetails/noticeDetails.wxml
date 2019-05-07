@@ -1,0 +1,9 @@
+<view class="container">
+  <view class="noticeItem" wx:for="{{notice}}" wx:key="{{index}}" data-id="{{item.id}}">
+    <view class="noticeTime">{{item.createtime}}</view>
+    <view class='content'>
+      <view class="noticeTitle">{{item.title}}</view>
+      <view class="noticeText">{{item.text}}</view>
+    </view>
+  </view>
+</view>

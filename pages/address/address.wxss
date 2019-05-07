@@ -1,0 +1,36 @@
+.mapInfo{
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  /* justify-content: center; */
+  width: 670rpx;
+  height: 270rpx;
+  padding: 30rpx 50rpx 0rpx 30rpx;
+}
+
+.mapTitle{
+  font-size: 30rpx;
+  line-height: 30rpx;
+  color: #111111;
+  font-weight: bold;
+}
+
+.mapAddress{
+  font-size: 26rpx;
+  line-height: 26rpx;
+  margin-top: 16rpx;
+  color: #111111;
+}
+
+.mapText{
+  font-size: 24rpx;
+  line-height: 26rpx;
+  margin-top: 15rpx;
+  color: #666666;
+}
+.mapPhone{
+  font-size: 24rpx;
+  line-height: 26rpx;
+  margin-top: 15rpx;
+  color: #666666;
+}

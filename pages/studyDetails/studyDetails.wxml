@@ -1,0 +1,31 @@
+<view class="container">
+  <!-- 模块一 标题 -->
+  <view class="title">
+    {{title}}
+  </view>
+  <!-- 模块二 时间栏 -->
+  <view class="time">
+    <view>{{createtime}}</view>
+    <view class="imageArea">
+      <image class="imageImg" src="../../image/{{url}}.png" style="margin-right:40rpx;" bindtap="collect" />
+      <button open-type='share'>
+        <image class="imageImg" src="../../image/share.png" bindtap="share" />
+      </button>
+    </view>
+  </view>
+
+
+
+
+  <!-- 模块三 视图区域 -->
+  <view class="videoAndImage">
+    <image class="videoImg" src="{{baseurl}}{{image}}" /> 
+  </view>
+  <!-- 模块四 文字 -->
+  <view class="textItem">
+    <rich-text nodes="{{content}}"></rich-text>
+  </view>
+
+
+  <view class="line"></view>
+</view>

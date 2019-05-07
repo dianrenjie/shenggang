@@ -1,0 +1,11 @@
+<view class="container">
+  <view class="listItem" wx:for="{{matrixList}}" wx:key="{{index}}" data-id="{{item.id}}" bindtap='toPartyPhotos'>
+    <view class="itemLeft">
+      <image class="matrixImg" src="{{item.image1}}"/>
+    </view>
+    <view class="itemRight">
+      <view class="itemTitle">{{item.title}}</view>
+      <view class="itemText">{{item.text}}</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,43 @@
+<!--index.wxml-->
+<view class='container'>
+  <!-- 模块一 轮播 是否显示圆点, 自动播放, 无缝滚动, 间隔, 选中点的颜色... -->
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" interval="{{interval}}" indicator-active-color="#E52B30">
+    <block wx:for="{{img}}" wx:for-item="item" wx:key>
+      <swiper-item>
+        <image class="swiperImage" src='{{item.image}}' url='{{item.url}}'></image>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <!-- 模块二 功能列表 -->
+  <view class='itemList'>
+    <view class='iconItem'>
+      <image class="iconImage" src='../../image/icon1.png' data-index="1" bindtap="toOther"></image>
+      <view class='txt'>资讯信息</view>
+    </view>
+    <view class='iconItem'>
+      <image class="iconImage" src='../../image/icon2.png' data-index="2" bindtap="toOther"></image>
+      <view class='txt'>党员学习</view>
+    </view>
+    <view class='iconItem'>
+      <image class="iconImage" src='../../image/icon3.png' data-index="3" bindtap="toOther"></image>
+      <view class='txt'>组织活动</view>
+    </view>
+    <view class='iconItem'>
+      <image class="iconImage" src='../../image/icon4.png' data-index="4" bindtap="toOther"></image>
+      <view class='txt'>支部计划</view>
+    </view>
+    <view class='iconItem'>
+      <image class="iconImage" src='../../image/icon5.png' data-index="5" bindtap="toOther"></image>
+      <view class='txt'>党建地图</view>
+    </view>
+    <view class='iconItem'>
+      <image class="iconImage" src='../../image/icon6.png' data-index="6" bindtap="toOther"></image>
+      <view class='txt'>党建矩阵</view>
+    </view>
+    <view class='iconItem'>
+      <image class="iconImage" src='../../image/icon6.png' data-index="7" bindtap="toOther"></image>
+      <view class='txt'>申请入党</view>
+    </view>
+  </view>
+</view>

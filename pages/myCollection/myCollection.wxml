@@ -1,0 +1,137 @@
+<view class="container">
+  <view class='statusSelect'>
+    <view class='tab  {{currentData == 0 ? "tabBorer" : ""}}' data-current="0" bindtap='checkCurrent'>资讯</view>
+    <view class='tab  {{currentData == 1 ? "tabBorer" : ""}}' data-current="1" bindtap='checkCurrent'>学习</view>
+    <view class='tab  {{currentData == 2 ? "tabBorer" : ""}}' data-current="2" bindtap='checkCurrent'>活动</view>
+  </view>
+
+  <swiper current="{{currentData}}" class='swiper' style="height:{{clientHeight?clientHeight+'px':'auto'}}" duration="300" bindanimationfinish="bindchange">
+
+
+
+
+    <!-- 分页 资讯 -->
+    <swiper-item class='scrollers'>
+      <scroll-view scroll-y style="height: {{clientHeight?clientHeight+'px':'auto'}}">
+        <view class="studyCount">
+          您共有{{length}}个收藏
+          <view class="line"></view>
+        </view>
+        <view class="lines"></view>
+        <view wx:for="{{message}}" wx:key="{{index}}" data-id="{{item.data.id}}" bindtap="toArticleDetails">
+          <view class="itemTitle">{{item.data.title}}</view>
+          <view class="itemVideo">
+            <image class="videoImage" src="{{baseurl}}{{item.data.image}}" />
+          </view>
+          <view class="itemintro">{{item.data.intro}}</view>
+          <view class="itemTime">{{item.data.createtime}}</view>
+          <view class="lines"></view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+
+
+    <!-- 分页 学习 -->
+    <swiper-item>
+      <scroll-view scroll-y style="height: {{clientHeight?clientHeight+'px':'auto'}}">
+        <view class='statusSelect'>
+
+          <view class='tab  {{learnData == 0 ? "tabBorer" : ""}}' data-current="0" bindtap='learncheckCurrent'>文章</view>
+          <view class='tab  {{learnData == 1 ? "tabBorer" : ""}}' data-current="1" bindtap='learncheckCurrent'>音频</view>
+          <view class='tab  {{learnData == 2 ? "tabBorer" : ""}}' data-current="2" bindtap='learncheckCurrent'>视频</view>
+        </view>
+        <swiper current="{{learnData}}" class='swiper' style="height: {{clientHeight?clientHeight+'px':'auto'}}" duration="300" bindchange="bindlearnchange">
+          <swiper-item>
+            <scroll-view scroll-y style="height: {{clientHeight?clientHeight+'px':'auto'}}">
+              <!-- 文章区域 -->
+              <view class="studyCount">
+                您共有{{articleLength}}个文章收藏
+                <view class="line"></view>
+              </view>
+              <view class="lines"></view>
+              <view wx:for="{{article}}" wx:key="{{index}}" data-id="{{item.data.id}}" bindtap="toStudyDetails">
+                <view class="itemTitle">{{item.data.a_title}}</view>
+                <view class="itemVideo">
+                  <image class="videoImage" src="{{baseurl}}{{item.data.a_image}}" />
+                </view>
+                <view class="itemintro">{{item.data.a_intro}}</view>
+                <view class="itemTime">{{item.data.createtime}}</view>
+                <view class="lines"></view>
+              </view>
+            </scroll-view>
+          </swiper-item>
+          <swiper-item>
+            <!-- 音频区域 -->
+            <scroll-view scroll-y style="height: {{clientHeight?clientHeight+'px':'auto'}}">
+              <view class="lines"></view>
+              <view class="studyCount">
+                您共有{{audioLength}}个音频收藏
+                <view class="line"></view>
+              </view>
+              <view class="lines"></view>
+              <view wx:for="{{audio}}" wx:key="{{index}}" data-id="{{item.data.id}}" bindtap="toAudioDetails">
+                <view class="itemTitle">{{item.data.m_title}}</view>
+
+                <view class="audioArea">
+                  <audio src="{{item.data.m_url}}" name="学习音频" author="" poster="http://img3.doubanio.com/pview/event_poster/raw/public/0db8f7ec0d60bb2.jpg" controls></audio>
+                </view>
+                <view class="itemintro">{{item.data.m_intro}}</view>
+                <view class="itemTime">{{item.data.createtime}}</view>
+                <view class="lines"></view>
+              </view>
+            </scroll-view>
+          </swiper-item>
+
+          <swiper-item>
+            <scroll-view scroll-y style="height: {{clientHeight?clientHeight+'px':'auto'}}">
+              <!-- 视频区域 -->
+              <view class="studyCount">
+                您共有{{videoLength}}个视频收藏
+                <view class="line"></view>
+              </view>
+              <view class="lines"></view>
+              <view wx:for="{{video}}" wx:key="{{index}}" data-id="{{item.data.id}}" bindtap="toClassDetails">
+                <view class="itemTitle">{{item.data.v_title}}</view>
+                <view class="itemVideo">
+                  <image class="playButton" src="../../image/playButton.png" wx:if="{{!showVideo}}" />
+                  <image class="videoImg" src="../../image/lizi1.png" wx:if="{{!showVideo}}" />
+                  <video class="videoImage" src="{{item.data.v_url}}" wx:if="{{showVideo}}"></video>
+                </view>
+                <view class="videoTime">{{item.data.createtime}}</view>
+                <view class="lines"></view>
+              </view>
+            </scroll-view>
+          </swiper-item>
+        </swiper>
+      </scroll-view>
+    </swiper-item>
+
+
+
+    <!-- 分页 活动 -->
+    <swiper-item>
+      <scroll-view scroll-y style="height: {{clientHeight?clientHeight+'px':'auto'}}">
+        <view class="studyCount">
+          您共有{{activityLength}}个收藏
+          <view class="line"></view>
+        </view>
+        <view class="lines"></view>
+        <view class="activityItem" wx:for="{{activity}}" wx:key="{{index}}" data-index="{{item.data.id}}" bindtap="toLifeDetails">
+          <view class="itemName">
+            {{item.data.title}}
+            <image class="rightImage" src="../../image/right.png" />
+          </view>
+          <view class="itemTime">
+            <image class="timeImage" src="../../image/time.png" /> {{item.data.createtime}}
+          </view>
+          <view class="itemTime">
+            <image class="timeImage" src="../../image/address.png " /> {{item.data.address}}
+          </view>
+          <view class="lines"></view>
+        </view>
+        <view class="lines"></view>
+      </scroll-view>
+    </swiper-item>
+
+  </swiper>
+</view>

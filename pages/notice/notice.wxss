@@ -1,0 +1,31 @@
+/* pages/xiaoxi/xiaoxi.wxss */
+page{
+  width: 100%;
+}
+
+.itemList{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 750rpx;
+  height: 160rpx
+}
+.itemImg{
+  width: 100rpx;
+  height: 100rpx;
+  margin: 30rpx;
+}
+.itemTitle{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 400rpx;
+  color: #333333;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.time{
+  color: #999999;
+  font-size: 20rpx;
+}

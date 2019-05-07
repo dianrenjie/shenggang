@@ -1,0 +1,107 @@
+page {
+  background: #eee;
+}
+
+/* 模块一 主题 */
+
+.theme {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 750rpx;
+  height: 208rpx;
+}
+
+.themeImage {
+  position: absolute;
+  width: 750rpx;
+  height: 208rpx;
+  top: 0rpx;
+  left: 0rpx;
+  z-index: -1;
+}
+
+.personImage {
+  margin-left: 40rpx;
+  width: 120rpx;
+  height: 120rpx;
+  background: #fff;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.personInfo {
+  color: #fff;
+  margin-left: 40rpx;
+  line-height: 100%;
+}
+
+/* 模块二 学习信息 */
+
+.studyInfo {
+  display: flex;
+  width: 690rpx;
+  padding: 0rpx 30rpx;
+  height: 160rpx;
+  background: #fff;
+}
+
+.studyItem {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 230rpx;
+  height: 160rpx;
+  line-height: 100%;
+}
+
+.lines {
+  position: absolute;
+  width: 4rpx;
+  height: 60rpx;
+  background: red;
+  top: 50rpx;
+  left: 228rpx;
+}
+
+/* 模块三 个人信息、学习记录、我的收藏 */
+
+.buttonArea {
+  width: 690rpx;
+  margin: 30rpx;
+  background: #fff;
+  border-radius: 12rpx;
+}
+
+.buttonItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 690rpx;
+  height: 120rpx;
+}
+
+.itemImg {
+  width: 70rpx;
+  height: 70rpx;
+  margin: 0rpx 30rpx;
+}
+
+.itemImg2 {
+  width: 18rpx;
+  height: 32rpx;
+  margin-left: 390rpx;
+}
+
+.line {
+  width: 100%;
+  height: 2rpx;
+  background: #eee;
+}
+.imageItem {
+  width: 120rpx;
+  height: 120rpx;
+}

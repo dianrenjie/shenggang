@@ -1,0 +1,66 @@
+<view class="container" wx:if="{{status==1}}">
+  <image class="theme" src="../../image/theme2.png" />
+
+  <view class='topTabSwiper'>
+    <view class='tab  {{currentData == 0 ? "tabBorer" : ""}}' data-current="0" bindtap='checkCurrent'>全部活动</view>
+    <view class='tab  {{currentData == 1 ? "tabBorer" : ""}}' data-current="1" bindtap='checkCurrent'>未开展</view>
+    <view class='tab  {{currentData == 2 ? "tabBorer" : ""}}' data-current="2" bindtap='checkCurrent'>已完成</view>
+  </view>
+  <swiper current="{{currentData}}" class='swiper' style="height:{{height}}px" duration="300" bindanimationfinish="bindchange">
+    <swiper-item>
+      
+        <view class="activityItem" wx:for="{{active}}" wx:key="{{index}}" data-index="{{item.id}}" bindtap="toLifeDetails">
+          <view class="itemName">
+            {{item.title}}
+            <image class="rightImage" src="../../image/right.png" />
+          </view>
+          <view class="itemTime">
+            <image class="timeImage" src="../../image/time.png" /> {{item.createtime}}
+          </view>
+          <view class="itemTime">
+            <image class="timeImage" src="../../image/address.png " /> {{item.address}}
+          </view>
+          <view class="line"></view>
+        </view>
+      
+    </swiper-item>
+    <swiper-item>
+      
+        <view class="activityItem" wx:for="{{undoneActive}}" wx:key="{{index}}" data-index="{{item.id}}" bindtap="toLifeDetails">
+          <view class="itemName">
+            {{item.title}}
+            <image class="rightImage" src="../../image/right.png" />
+          </view>
+          <view class="itemTime">
+            <image class="timeImage" src="../../image/time.png" /> {{item.createtime}}
+          </view>
+          <view class="itemTime">
+            <image class="timeImage" src="../../image/address.png " /> {{item.address}}
+          </view>
+          <view class="line"></view>
+        </view>
+      
+    </swiper-item>
+    <swiper-item>
+      
+        <view class="activityItem" wx:for="{{finishActive}}" wx:key="{{index}}" data-index="{{item.id}}" bindtap="toLifeDetails">
+          <view class="itemName">
+            {{item.title}}
+            <image class="rightImage" src="../../image/right.png" />
+          </view>
+          <view class="itemTime">
+            <image class="timeImage" src="../../image/time.png" /> {{item.createtime}}
+          </view>
+          <view class="itemTime">
+            <image class="timeImage" src="../../image/address.png " /> {{item.address}}
+          </view>
+          <view class="line"></view>
+        </view>
+      
+    </swiper-item>
+  </swiper>
+</view>
+<view class='container' wx:else>
+  <view class='elseImg'><image  src='../../image/fail.png' /></view>
+  <view class='elseText'>你还不是党员</view>
+</view>

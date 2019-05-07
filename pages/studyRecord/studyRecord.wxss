@@ -1,0 +1,142 @@
+
+/* 模块一 顶部菜单 */
+
+.statusSelect {
+  display: flex;
+  flex-direction: row;
+  font-size: 30rpx;
+  width: 750rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  color: #000;
+  /* margin-bottom: 4rpx; */
+}
+
+
+
+.statusItem {
+  position: relative;
+  text-align: center;
+  width: 250rpx;
+  height: 90rpx;
+}
+
+/* 模块2二 学习次数 */
+.learnCount{
+  position: relative;
+  margin-left: 50rpx;
+  font-size: 32rpx;
+  line-height: 90rpx;
+}
+.line{
+  position: absolute;
+  width: 6rpx;
+  height: 24rpx;
+  background-color: red;
+  top: 32rpx;
+  left: -20rpx;
+}
+
+/* 模块三 信息列表 */
+
+.itemList {
+  display: flex;
+  flex-direction: column;
+  padding: 0rpx 30rpx;
+}
+
+.itemTitle {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: 40rpx;
+  font-weight: 500;
+  line-height: 50rpx;
+  margin: 10rpx 0rpx;
+  color: #000;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;  
+}
+.itemintro{
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: 32rpx;
+  font-weight: 500;
+  line-height: 50rpx;
+  margin: 10rpx 0rpx;
+  color: #000;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;  
+}
+.itemTime {
+  font-size: 28rpx;
+  color: #999;
+  line-height: 70rpx;
+}
+
+.lines {
+  width: 750rpx;
+  height: 2rpx;
+  background-color: #eee;
+  /* margin-left: -30rpx; */
+}
+
+/* 模块四 视频区域 */
+
+.itemVideo {
+  position: relative;
+  width: 690rpx;
+  height: 390rpx;
+}
+
+.videoImage,.videoImg {
+  width: 690rpx;
+  height: 390rpx;
+}
+
+.playButton {
+  position: absolute;
+  top: 135rpx;
+  left: 300rpx;
+  width: 80rpx;
+  height: 80rpx;
+}
+
+/* 模块五 音频区域 */
+.audioList{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 690rpx;
+  padding: 0rpx 30rpx;
+  min-height: 180rpx;
+}
+
+.audioImage{
+  width: 120rpx;
+  height: 120rpx;
+  margin-right: 30rpx;
+}
+
+.textArea{
+  display: flex;
+  flex-direction: column;
+}
+.tab {
+  float: left;
+  width: 33.3333%;
+  text-align: center;
+  padding: 10rpx 0;
+}
+
+.tabBorer {
+  border-bottom: 1px solid #f00;
+  color: #f00;
+}
+.audioArea {
+  padding-top: 20rpx;
+}

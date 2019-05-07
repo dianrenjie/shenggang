@@ -1,0 +1,77 @@
+page {
+  width: 100%;
+  min-height: 100%;
+  background: rgb(226, 226, 226);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 0rpx 30rpx;
+}
+
+/* 模块二 公共样式 */
+
+.line {
+  margin-left: -30rpx;
+  width: 750rpx;
+  height: 2rpx;
+  background-color: #cccacc;
+}
+
+.listItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 690rpx;
+  height: 100rpx;
+  font-size: 30rpx;
+  color: rgb(183, 183, 183);
+}
+
+.itemName {
+  width: 180rpx;
+  color: rgb(50, 50, 50);
+}
+
+.imageItem {
+  width: 120rpx;
+  height: 120rpx;
+}
+
+/* 模块三 输入框样式 */
+
+input {
+  -web-kit-appearance: none;
+  -moz-appearance: none;
+  text-align: right;
+  width: 510rpx;
+  font-size: 30rpx;
+}
+
+/* 模块四  选择器样式 */
+
+.itemPicker {
+  width: 300rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: right;
+}
+
+/* 模块五 底部按钮样式 */
+
+.button {
+  position: fixed;
+  bottom: 20rpx;
+  width: 690rpx;
+  height: 90rpx;
+  background-color: red;
+  border-radius: 10rpx;
+  line-height: 90rpx;
+  font-size: 40rpx;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  margin-left: 30rpx;
+}

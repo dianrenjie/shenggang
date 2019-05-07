@@ -1,0 +1,12 @@
+<view class="container">
+  <view class="title">{{title}}</view>
+  <view class="time">{{createtime}}</view>
+  <view class="textArea">
+    <rich-text nodes="{{content}}"></rich-text>
+  </view>
+  
+</view>
+
+<view class="buttonArea">
+  <view class="button" bindtap="seeMore">查看其它支部计划</view>
+</view>

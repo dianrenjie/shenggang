@@ -1,0 +1,54 @@
+<view wx:if="{{!success}}">
+  <view class='row'>
+    <view class='info'>
+      <input class='info-input1' bindinput="handleInputPhone" placeholder="请输入你的手机号" />
+    </view>
+    <button class='button' bindtap='doGetCode' disabled='{{disabled}}' style="background-color:{{color}}">{{text}}</button>
+  </view>
+  <view class='row'>
+    <view class='info'>
+      <input class='info-input' bindinput="handleVerificationCode" placeholder="请输入你的验证码" />
+    </view>
+
+  </view>
+  <view class='row'>
+    <view class='info'>
+      <input type='text' class='info-input' bindinput="handleNewRealname" placeholder="请输入你的名称" />
+    </view>
+
+  </view>
+  <view class='row'>
+    <view class='info'>
+      <input type='text' class='info-input' bindinput="handleNewIdCard" placeholder="请输入你的身份证号" />
+    </view>
+
+  </view>
+  <view class='row'>
+
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+      性别：{{array[index]}}
+    </view>
+  </picker>
+
+  </view>  
+  <view class='row'>
+    <view class='info'>
+      <input type='password' class='info-input' bindinput="handleNewChanges" placeholder="请输入你的密码" />
+    </view>
+
+  </view>
+  <view class='row'>
+    <view class='info'>
+      <input type='password' class='info-input' bindinput="handleNewChangesAgain" placeholder="请确认你的密码" />
+    </view>
+
+  </view>
+
+  <button class='submit' bindtap='submit'>提交</button>
+</view>
+<view class='success' wx:if="{{success}}">
+  <view class='cheer'>
+    <icon type="success" size="24" /> 恭喜您注册成功!</view>
+  <button type="default" class='return' bindtap='return_home'>返回首页</button>
+</view>

@@ -1,0 +1,48 @@
+<view class="container">
+  <!-- 模块一 个人照片 -->
+  <view class="line"></view>
+  <view class="listItem" style="height:150rpx;">
+    <view class="itemName">个人照片</view>
+    <image class="imageItem" src="{{image}}" />
+  </view>
+  <!-- 模块二 用户姓名 -->
+  <view class="line"></view>
+  <view class="listItem">
+    <view class="itemName">真实姓名</view>
+    <input placeholder='请输入您的姓名' value='{{realname}}' type="text" disabled></input>
+  </view>
+
+  <!-- 模块三 用户身份证证件号 -->
+  <view class="line"></view>
+  <view class="listItem">
+    <view class="itemName">身份证证件号</view>
+    <input placeholder='未填写，可在网页中填写' value='{{id_card}}' type="idcard" disabled></input>
+  </view>
+  <!-- 模块四 用户政治面貌 -->
+  <view class="line"></view>
+  <view class="listItem">
+    <view class="itemName">政治面貌</view>
+    <view class="itemPicker">{{status=='1'?'党员':'群众'}}</view>
+  </view>
+  <!-- 模块五  用户手机号 -->
+  <view class="line"></view>
+  <view class="listItem">
+    <view class="itemName">手机号码</view>
+    <input placeholder='请输入您的手机号码' value='{{iphone}}' type="number" disabled></input>
+  </view>
+    <!-- 模块六  用户年龄 -->
+  <view class="line"></view>
+  <view class="listItem">
+    <view class="itemName">年龄</view>
+    <input placeholder='填写年龄' value='{{age}}' type="text" bindinput="userAge" ></input>
+  </view>
+  <!-- 模块七  用户地址 -->
+  <view class="line"></view>
+  <view class="listItem">
+    <view class="itemName">目前住址</view>
+    <input placeholder='增加地址' value='{{address}}' type="text" bindinput="userAddress" ></input>
+  </view>
+</view>
+
+<!-- 模块八 底部按钮 -->
+<view class="button" bindtap="onClick">修改</view>
